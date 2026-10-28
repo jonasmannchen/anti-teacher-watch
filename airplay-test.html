@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101623">
+  <title>AirPlay-Test · Hallo</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; color: #f5f7fb; background: radial-gradient(ellipse at top, #253451 0, #101623 58%); }
+    main { width: min(100%, 720px); padding: clamp(24px, 5vw, 48px); border: 1px solid #ffffff22; border-radius: 24px; background: #151d2be8; box-shadow: 0 24px 80px #0006; }
+    .eyebrow { color: #9bb5ff; font-size: .82rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: 10px 0 8px; font-size: clamp(2.5rem, 10vw, 4.5rem); letter-spacing: -.06em; }
+    p { color: #c6cede; line-height: 1.6; }
+    video { display: block; width: 100%; max-height: 56vh; margin: 24px 0 12px; border-radius: 14px; background: #05080d; }
+    .note { margin-top: 22px; padding: 16px 18px; border-left: 3px solid #8daaff; border-radius: 8px; background: #ffffff0a; }
+    .note strong { color: #fff; }
+    .download { display: inline-block; margin-top: 22px; padding: 12px 18px; border-radius: 10px; color: #101623; background: #b6c7ff; font-weight: 700; text-decoration: none; }
+    .download:hover { background: #d0dcff; }
+    small { color: #9ca8bb; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">Kleiner Safari-Test</div>
+    <h1>Hallo 👋</h1>
+    <p>Starte das Video, um die AirPlay-Einstellung des eingebetteten Players zu testen.</p>
+
+    <video controls playsinline disableRemotePlayback x-webkit-airplay="deny" preload="metadata">
+      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+      Dein Browser kann dieses Video nicht abspielen.
+    </video>
+    <small>Das Beispielvideo wird von MDN geladen; dafür braucht das iPad Internetzugang.</small>
+
+    <div class="note">
+      <p><strong>Was dieser Test zeigt:</strong> Der Player soll keine direkte AirPlay-Ausgabe anbieten.</p>
+      <p><strong>Was er nicht kann:</strong> Die iPad-Funktion „Bildschirmsynchronisierung“ sperren. Wenn du den ganzen Bildschirm spiegelst, kann diese Seite weiterhin auf dem PC erscheinen.</p>
+    </div>
+    <a class="download" href="/airplay-test.html" download="airplay-test.html">HTML herunterladen</a>
+  </main>
+</body>
+</html>
