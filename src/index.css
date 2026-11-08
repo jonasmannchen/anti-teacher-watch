@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+/* Globale Styles */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Verhindere Scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Verhindere Kontextmenü auf Bildern */
+img {
+  -webkit-touch-callout: none;
+}
+
+/* Video-Controls verstecken */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+/* Fullscreen Styles */
+:fullscreen, :-webkit-full-screen {
+  background-color: #000;
+  width: 100% !important;
+  height: 100% !important;
+}
