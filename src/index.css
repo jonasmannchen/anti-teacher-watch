@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+/* Globale Styles für die Virtual Display App */
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Host-Seite ist scrollbar, View-Seite ist fixed */
+#root {
+  overflow: auto;
+}
+
+/* Verhindere Textauswahl auf der Zuschaueransicht */
+.cursor-none {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Animationen */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Verstecke Scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+/* Verhindere Kontextmenü auf Bildern */
+img {
+  -webkit-touch-callout: none;
+}
+
+/* Safari-spezifische Styles für AirPlay */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+/* Fullscreen Styles */
+:fullscreen {
+  background-color: #000;
+}
+
+:-webkit-full-screen {
+  background-color: #000;
+}
+
+:-webkit-full-screen img,
+:fullscreen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* iOS Safe Area */
+@supports (padding: env(safe-area-inset-top)) {
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
